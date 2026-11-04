@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LUMIÈRE — Luxury Cosmetics</title>
+<meta name="description" content="LUMIÈRE luxury cosmetics: vegan, cruelty-free skincare and colour for every skin tone. Shop lipstick, foundation, serums and gift sets with delivery across Kenya.">
+<meta name="theme-color" content="#0d0b0c">
+<meta property="og:title" content="LUMIÈRE — Luxury Cosmetics"><meta property="og:description" content="Vegan, cruelty-free beauty made for every skin tone."><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0b0c;--surf:#171314;--surf2:#201a1c;--text:#fffaf4;--mute:#d2c6bf;--gold:#e3b583;--rose:#f0bcc0;--line:rgba(227,181,131,.3);color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;font-weight:400;line-height:1.7;overflow-x:hidden}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;line-height:1.1;margin:0}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+.btn{display:inline-block;padding:14px 34px;border:1px solid var(--gold);color:var(--gold);background:transparent;font:500 .78rem Inter,sans-serif;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:.3s}
+.btn:hover,.btn.solid{background:var(--gold);color:#1a1210}
+.btn.solid:hover{background:var(--rose);border-color:var(--rose)}
+header{position:sticky;top:0;z-index:20;background:rgba(13,11,12,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font:600 1.7rem 'Cormorant Garamond',serif;letter-spacing:.28em;color:var(--gold)}
+.links{display:flex;gap:34px;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase}
+.links a{color:var(--mute);transition:.3s}.links a:hover{color:var(--gold)}
+.cartbtn{background:none;border:1px solid var(--line);color:var(--text);padding:8px 18px;cursor:pointer;font:400 .78rem Inter;letter-spacing:.15em}
+.cartbtn span{color:var(--gold);margin-left:6px}
+.hero{min-height:88vh;display:grid;align-items:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 75% 40%,rgba(232,180,184,.16),transparent 55%),radial-gradient(ellipse at 20% 90%,rgba(212,165,116,.12),transparent 50%)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(3rem,7vw,5.6rem);margin:18px 0 22px}
+.hero h1 em{color:var(--rose);font-style:italic}
+.hero p{max-width:470px;color:var(--mute);font-size:1.02rem}
+.hero .cta{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap}
+.orb{aspect-ratio:1;max-width:420px;margin:auto;width:100%;border-radius:50%;background:conic-gradient(from 210deg,#e8b4b8,#d4a574,#7a4a4f,#e8b4b8);position:relative;box-shadow:0 0 120px rgba(232,180,184,.25);animation:float 7s ease-in-out infinite}
+.orb::after{content:"";position:absolute;inset:14%;border-radius:50%;background:var(--bg);box-shadow:inset 0 0 60px rgba(212,165,116,.2)}
+.orb i{position:absolute;inset:0;display:grid;place-items:center;z-index:2;font:italic 400 1.5rem 'Cormorant Garamond',serif;color:var(--gold);text-align:center;line-height:1.3}
+@keyframes float{50%{transform:translateY(-16px)}}
+.strip{border-block:1px solid var(--line);padding:22px 0;font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
+.strip .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+section{padding:100px 0}
+.head{text-align:center;margin-bottom:46px}
+.head h2{font-size:clamp(2.2rem,4.5vw,3.4rem);margin-top:12px}
+.tabs{display:flex;justify-content:center;gap:10px;margin-bottom:42px;flex-wrap:wrap}
+.tabs button{background:none;border:1px solid var(--line);color:var(--mute);padding:9px 22px;font:400 .74rem Inter;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:.3s}
+.tabs button.on,.tabs button:hover{border-color:var(--gold);color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:26px}
+.card{background:var(--surf);border:1px solid transparent;transition:.4s}
+.card:hover{border-color:var(--line);transform:translateY(-6px)}
+.pic{aspect-ratio:4/5;display:grid;place-items:center;background:var(--g);position:relative}
+.pic b{width:34%;aspect-ratio:1/2.6;border-radius:10px 10px 6px 6px;background:linear-gradient(135deg,rgba(255,255,255,.55),var(--c) 40%,rgba(0,0,0,.45));box-shadow:0 20px 40px rgba(0,0,0,.45)}
+.pic b.round{aspect-ratio:1;border-radius:50%;width:48%}
+.tag{position:absolute;top:14px;left:14px;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;background:var(--bg);color:var(--gold);padding:4px 10px}
+.info{padding:22px}
+.info small{color:var(--mute);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase}
+.info h3{font-size:1.5rem;margin:4px 0 6px}
+.info p{margin:0 0 16px;color:var(--mute);font-size:.86rem;line-height:1.5}
+.row{display:flex;justify-content:space-between;align-items:center}
+.price{font:500 1.25rem 'Cormorant Garamond',serif;color:var(--gold)}
+.add{background:none;border:1px solid var(--line);color:var(--text);padding:8px 16px;cursor:pointer;font:400 .7rem Inter;letter-spacing:.15em;text-transform:uppercase;transition:.3s}
+.add:hover{background:var(--gold);color:#1a1210}
+.story{background:var(--surf)}
+.story .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.story h2{font-size:clamp(2.2rem,4vw,3.2rem);margin:14px 0 20px}
+.story p{color:var(--mute)}
+.feats{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.feat{border:1px solid var(--line);padding:26px 22px;background:var(--bg)}
+.feat h3{font-size:1.3rem;color:var(--rose);margin-bottom:6px}
+.feat p{margin:0;font-size:.84rem;line-height:1.55}
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px}
+.q{border-top:1px solid var(--gold);padding-top:22px}
+.q p{font:italic 400 1.3rem/1.45 'Cormorant Garamond',serif;margin:0 0 14px}
+.q span{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+.news{text-align:center;background:linear-gradient(135deg,var(--surf2),var(--bg));border-block:1px solid var(--line)}
+.news form{display:flex;max-width:480px;margin:30px auto 0;gap:0}
+.news input{flex:1;min-width:0;background:transparent;border:1px solid var(--line);border-right:0;padding:14px 18px;color:var(--text);font:300 .9rem Inter}
+.news input:focus{outline:none;border-color:var(--gold)}
+.news .btn{padding:14px 24px}
+.ok{color:var(--gold);margin-top:16px;min-height:1.5em}
+footer{padding:60px 0 40px;color:var(--mute);font-size:.82rem}
+footer .wrap{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+footer .logo{font-size:1.4rem}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(400px,100%);background:var(--surf);border-left:1px solid var(--line);z-index:50;transform:translateX(100%);transition:.4s;display:flex;flex-direction:column;padding:26px;padding-top:calc(26px + env(safe-area-inset-top,0px))}
+.drawer.open{transform:none}
+.drawer h3{font-size:1.8rem;display:flex;justify-content:space-between;align-items:center}
+.drawer h3 button{background:none;border:0;color:var(--text);font-size:1.6rem;cursor:pointer}
+#items{flex:1;overflow:auto;margin:20px 0}
+.it{display:flex;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+.it button{background:none;border:0;color:var(--rose);cursor:pointer;font-size:.72rem;letter-spacing:.1em;padding:0}
+.total{display:flex;justify-content:space-between;font:500 1.4rem 'Cormorant Garamond',serif;margin-bottom:16px}
+.shade{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:40;opacity:0;pointer-events:none;transition:.4s}
+.shade.on{opacity:1;pointer-events:auto}
+.rv{opacity:0;transform:translateY(30px);transition:1s}.rv.in{opacity:1;transform:none}
+.pic{cursor:pointer}
+.modal{position:fixed;inset:0;z-index:60;display:none;place-items:center;padding:20px;background:rgba(0,0,0,.72)}.modal.on{display:grid}
+.box{background:var(--surf);border:1px solid var(--line);max-width:820px;width:100%;max-height:90vh;overflow:auto;position:relative;display:grid;grid-template-columns:1fr 1fr}
+.box.sm{max-width:480px;grid-template-columns:1fr;padding:30px}
+.x{position:absolute;top:10px;right:16px;background:none;border:0;color:var(--text);font-size:1.8rem;cursor:pointer;z-index:2}
+.pd{padding:34px}#mpic{min-height:340px}
+.sw{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 24px}
+.sw button{width:34px;height:34px;border-radius:50%;border:2px solid transparent;cursor:pointer;background:var(--c);outline:1px solid var(--line);outline-offset:2px}
+.sw button.on{border-color:var(--gold)}
+.sw button.chip{width:auto;height:auto;border-radius:0;background:none;color:var(--text);padding:6px 16px;font:400 .75rem Inter;border:1px solid var(--line);outline:0}
+.sw button.chip.on{border-color:var(--gold);color:var(--gold)}
+.quiz{max-width:640px;margin:0 auto;text-align:center;border:1px solid var(--line);background:var(--surf);padding:44px 30px}
+.opts{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));margin-top:26px}
+.opts button{background:none;border:1px solid var(--line);color:var(--text);padding:14px;cursor:pointer;font:400 .8rem Inter;letter-spacing:.12em;text-transform:uppercase;transition:.3s}
+.opts button:hover{border-color:var(--gold);color:var(--gold)}
+.fld{width:100%;background:transparent;border:1px solid var(--line);padding:13px 16px;color:var(--text);font:300 .9rem Inter;margin-bottom:12px}
+.fld:focus{outline:none;border-color:var(--gold)}.fld option{background:#171314}
+.wa{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:30;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-size:1.6rem;box-shadow:0 8px 24px rgba(0,0,0,.5);transition:.3s}.wa:hover{transform:scale(1.08)}
+:root[data-theme="light"]{--bg:#efe1cd;--surf:#e5d3bb;--surf2:#dcc6aa;--text:#1a1112;--mute:#4d3f38;--gold:#8a5a28;--rose:#9c3f55;--line:rgba(110,70,30,.4);color-scheme:light}
+[data-theme="light"] header{background:rgba(239,225,205,.93)}[data-theme="light"] .fld option{background:#e5d3bb}
+.heart{position:absolute;top:10px;right:12px;background:var(--bg);border:0;color:var(--rose);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:1.1rem;z-index:2}
+.tools{display:flex;gap:12px;max-width:560px;margin:0 auto 34px}.tools .fld{margin:0}
+.bun{background:var(--bg);padding:34px 26px;text-align:center}
+details{border-bottom:1px solid var(--line);padding:20px 0}summary{cursor:pointer;font:500 1.4rem 'Cormorant Garamond',serif;list-style:none;display:flex;justify-content:space-between}summary::after{content:"+";color:var(--gold)}details[open] summary::after{content:"−"}details p{color:var(--mute);margin:12px 0 0}
+.links{gap:24px}
+.ann{background:linear-gradient(90deg,var(--rose),var(--gold));color:#1a1210;text-align:center;font:500 .72rem Inter,sans-serif;letter-spacing:.2em;text-transform:uppercase;padding:9px 44px;position:relative}
+.ann button{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:0;color:#1a1210;font-size:1.3rem;cursor:pointer;line-height:1}
+.rcols{display:grid;grid-template-columns:1fr 1fr;gap:26px}.rcol{border:1px solid var(--line);padding:26px;background:var(--bg)}
+.rs{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.92rem}.rs small{display:block;color:var(--gold);letter-spacing:.15em;text-transform:uppercase;font-size:.66rem}
+.ba{position:relative;max-width:720px;aspect-ratio:16/9;margin:0 auto;overflow:hidden;border:1px solid var(--line)}.ba div{position:absolute;inset:0}
+.ba-a{background:radial-gradient(circle at 30% 40%,rgba(255,235,210,.6),transparent 45%),linear-gradient(135deg,#d9a579,#b9805a)}
+.ba-b{background:radial-gradient(circle at 20% 30%,rgba(90,50,40,.5) 0 3%,transparent 4%),radial-gradient(circle at 60% 55%,rgba(90,50,40,.45) 0 2.5%,transparent 3.5%),radial-gradient(circle at 75% 25%,rgba(90,50,40,.5) 0 3%,transparent 4%),linear-gradient(135deg,#a8785a,#8a5f48);clip-path:inset(0 50% 0 0)}
+.ba span{position:absolute;bottom:14px;left:16px;font:500 .7rem Inter;letter-spacing:.2em;text-transform:uppercase;background:var(--bg);color:var(--gold);padding:4px 10px}.ba-a span{left:auto;right:16px}
+.ba div.ba-h{inset:0 auto 0 50%;width:2px;background:var(--gold)}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:50px}.cg p{margin:0 0 14px;color:var(--mute)}.cg b{color:var(--text);font-weight:500}
+.ck{position:fixed;left:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));max-width:min(360px,calc(100% - 100px));z-index:35;background:var(--surf);border:1px solid var(--line);padding:20px;display:none}.ck.on{display:block}
+.lnk{background:none;border:0;color:inherit;font:inherit;cursor:pointer;padding:0;text-decoration:underline}
+.skip{position:absolute;left:-999px;top:0;background:var(--gold);color:#1a1210;padding:10px 16px;z-index:100}.skip:focus{left:10px;top:10px}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}.ba:focus-within{outline:2px solid var(--gold)}
+.drawer{visibility:hidden;transition:transform .4s,visibility 0s .4s}.drawer.open{visibility:visible;transition:transform .4s}
+.sale{background:var(--surf2);border-block:1px solid var(--line);padding:16px 0;text-align:center}.sale .wrap{display:flex;justify-content:center;gap:26px;flex-wrap:wrap;align-items:center}
+.cd{font:500 1.4rem 'Cormorant Garamond',serif;color:var(--gold);font-variant-numeric:tabular-nums}
+.chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}.chips button{background:none;border:1px solid var(--line);color:var(--text);padding:8px 18px;font:400 .78rem Inter,sans-serif;cursor:pointer;transition:.3s}.chips button:hover{border-color:var(--gold);color:var(--gold)}
+.tools{max-width:760px;flex-wrap:wrap}.tools .fld{flex:1 1 150px}.btn:disabled{opacity:.5;cursor:not-allowed}
+.cmp{display:block;margin-top:12px;font-size:.74rem;color:var(--mute);cursor:pointer;letter-spacing:.1em}.cmp input{accent-color:var(--gold);margin-right:6px}
+.cbar{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:36;background:var(--surf);border:1px solid var(--gold);padding:10px 16px;display:none;gap:12px;align-items:center;font-size:.8rem}.cbar.on{display:flex}
+.cmpt{width:100%;border-collapse:collapse;font-size:.88rem}.cmpt th{font:500 1.3rem 'Cormorant Garamond',serif;text-align:left;padding:10px;color:var(--gold)}.cmpt td{padding:12px 10px;border-top:1px solid var(--line);vertical-align:top;color:var(--mute)}.cmpt td:first-child{color:var(--text);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;white-space:nowrap}
+@media(max-width:820px){#madd{position:sticky;bottom:0;z-index:3;box-shadow:0 0 0 10px var(--surf)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media(max-width:820px){.rcols,.cg{grid-template-columns:1fr}.box{grid-template-columns:1fr}#mpic{min-height:260px}}
+@media(max-width:820px){.links{display:none}.hero .wrap,.story .wrap{grid-template-columns:1fr}.orb{max-width:280px}section{padding:70px 0}}
+</style>
+</head>
+<body>
+<a class="skip" href="#shop">Skip to products</a>
+<div class="ann" id="ann"><span id="annt">Free delivery over KES 5,000</span><button id="annx" aria-label="Close">×</button></div>
+<header><div class="wrap"><nav>
+<a class="logo" href="#top">LUMIÈRE</a>
+<div class="links"><a href="#shop">Shop</a><a href="#finder">Shade Finder</a><a href="#story">Philosophy</a><a href="#bundles">Gift Sets</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a><a href="#contact">Contact</a><a href="#join">Journal</a></div>
+<div style="display:flex;gap:8px"><button class="cartbtn" id="th" aria-label="Toggle theme">◐</button><button class="cartbtn" id="wl" aria-label="Wishlist">♡<span id="wc">0</span></button><button class="cartbtn" id="open">BAG<span id="count">0</span></button></div>
+</nav></div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<div>
+<div class="eyebrow">Clean luxury beauty · Nairobi &amp; beyond</div>
+<h1>Radiance, <em>refined.</em></h1>
+<p>Botanical formulas and couture colour, crafted for every skin tone. Beauty that feels as extraordinary as it looks.</p>
+<div class="cta"><a class="btn solid" href="#shop">Shop collection</a><a class="btn" href="#story">Our philosophy</a></div>
+</div>
+<div class="orb"><i>Golden<br>Hour<br>Glow</i></div>
+</div></div>
+
+<div class="strip"><div class="wrap"><span>Cruelty-free</span><span>Dermatologist tested</span><span>Free delivery over KES 5,000</span><span>Made for melanin-rich skin</span></div></div>
+
+<div class="sale" id="sale"><div class="wrap"><span class="eyebrow">November sale</span><span>15% off with code <b style="color:var(--gold)">LUMIERE15</b></span><span class="cd" id="cd"></span></div></div>
+
+<section id="shop"><div class="wrap">
+<div class="head rv"><div class="eyebrow">The Collection</div><h2>Signature essentials</h2></div>
+<div class="tabs" id="tabs"><button class="on" data-f="all">All</button><button data-f="skin">Skincare</button><button data-f="lips">Lips</button><button data-f="face">Face</button><button data-f="eyes">Eyes</button></div>
+<div class="tools"><input class="fld" id="srch" placeholder="Search products" aria-label="Search"><select class="fld" id="con" aria-label="Skin concern"><option value="">All concerns</option><option>Glow</option><option>Hydration</option><option>Sensitive skin</option><option>Sun protection</option></select><select class="fld" id="prc" aria-label="Price range"><option value="">Any price</option><option value="lo">Under KES 3,000</option><option value="mid">KES 3,000 – 5,000</option><option value="hi">Over KES 5,000</option></select><select class="fld" id="sort" aria-label="Sort"><option value="def">Featured</option><option value="lo">Price: low to high</option><option value="hi">Price: high to low</option></select></div>
+<div class="grid" id="grid"></div>
+</div></section>
+
+<section id="recent" style="display:none;padding:0 0 60px"><div class="wrap"><div class="eyebrow" style="text-align:center">Recently viewed</div><div class="chips" id="rvrow"></div></div></section>
+
+<section id="bundles" style="background:var(--surf)"><div class="wrap"><div class="head rv"><div class="eyebrow">Gift sets</div><h2>Curated bundles</h2></div><div class="grid" id="bgrid"></div></div></section>
+
+<section id="finder"><div class="wrap"><div class="head rv"><div class="eyebrow">Shade finder</div><h2>Find your perfect match</h2></div><div class="quiz rv" id="quiz"></div></div></section>
+
+<section id="routine" style="background:var(--surf)"><div class="wrap"><div class="head rv"><div class="eyebrow">Skincare ritual</div><h2>Build your routine</h2></div>
+<div class="tabs" id="rtabs"><button class="on" data-t="Oily">Oily</button><button data-t="Dry">Dry</button><button data-t="Combination">Combination</button><button data-t="Sensitive">Sensitive</button></div>
+<div id="rout"></div></div></section>
+
+<section id="results"><div class="wrap"><div class="head rv"><div class="eyebrow">Real results</div><h2>See the glow</h2></div>
+<div class="ba rv"><div class="ba-a"><span>After</span></div><div class="ba-b" id="bb"><span>Before</span></div><div class="ba-h" id="bh"></div><input type="range" min="0" max="100" value="50" id="br" aria-label="Before and after slider"></div>
+<p style="text-align:center;color:var(--mute);font-size:.8rem;margin-top:16px">Drag to compare</p></div></section>
+
+<section class="story" id="story"><div class="wrap">
+<div class="rv">
+<div class="eyebrow">Our philosophy</div>
+<h2>Where science meets ritual</h2>
+<p>Every LUMIÈRE formula starts with responsibly sourced botanicals and is refined with skin-loving actives. No harsh fillers, no shortcuts. Just products that perform beautifully and treat your skin kindly.</p>
+<p style="margin-bottom:30px">Shades are developed across a deep, true-to-skin range, because luxury should be for everyone.</p>
+<a class="btn" href="#shop">Discover the range</a>
+</div>
+<div class="feats rv">
+<div class="feat"><h3>Botanical</h3><p>Shea, marula and rosehip oils at the heart of every formula.</p></div>
+<div class="feat"><h3>Inclusive</h3><p>40 foundation shades from porcelain to deepest ebony.</p></div>
+<div class="feat"><h3>Vegan</h3><p>100% plant-derived, never tested on animals.</p></div>
+<div class="feat"><h3>Refillable</h3><p>Elegant compacts and jars designed to be refilled.</p></div>
+</div>
+</div></section>
+
+<section id="reviews"><div class="wrap">
+<div class="head rv"><div class="eyebrow">Loved by thousands</div><h2>Words from our community</h2></div>
+<div class="quotes rv">
+<div class="q"><p>“The Velvet Matte lipstick is the first one that actually looks stunning on my skin tone.”</p><span>Amina K. · Nairobi</span></div>
+<div class="q"><p>“My skin has never glowed like this. The serum is pure magic in a bottle.”</p><span>Grace W. · Eldoret</span></div>
+<div class="q"><p>“Luxury packaging, luxury results. I’ve replaced my entire routine.”</p><span>Linet O. · Kisumu</span></div>
+</div>
+</div></section>
+
+<section id="faq"><div class="wrap" style="max-width:760px"><div class="head rv"><div class="eyebrow">Good to know</div><h2>Frequently asked</h2></div>
+<details><summary>How long does delivery take?</summary><p>Eldoret and Nairobi orders arrive in 1 to 2 working days. Other counties take 2 to 4 days. Delivery is free on orders over KES 5,000.</p></details>
+<details><summary>Can I pay with M-Pesa?</summary><p>Yes. Enter your M-Pesa number at checkout and approve the prompt on your phone with your PIN.</p></details>
+<details><summary>What if my shade is wrong?</summary><p>Use our Shade Finder first. If it still isn’t right, unopened or lightly swatched items can be exchanged within 14 days.</p></details>
+<details><summary>Are your products cruelty-free and vegan?</summary><p>Yes. Every formula is 100% plant-derived and never tested on animals.</p></details>
+<details><summary>How do discount codes work?</summary><p>Enter your code in the bag. Join the Journal below to get WELCOME10 for 10% off your first order.</p></details>
+</div></section>
+
+<section class="news" id="join"><div class="wrap rv">
+<div class="eyebrow">The LUMIÈRE Journal</div>
+<h2 style="font-size:clamp(2rem,4vw,3rem);margin-top:12px">Join the inner circle</h2>
+<p style="color:var(--mute);margin:12px 0 0">Beauty rituals, early access and 10% off your first order.</p>
+<form id="nf"><input type="email" required placeholder="Your email address" aria-label="Email"><button class="btn solid" type="submit">Join</button></form>
+<div class="ok" id="ok"></div>
+</div></section>
+</main>
+
+<section id="about" style="background:var(--surf)"><div class="wrap"><div class="cg rv" style="align-items:center"><div class="orb" style="max-width:300px"><i style="font-size:4.5rem">L</i></div><div><div class="eyebrow">Our story</div><h2 style="font-size:clamp(2.2rem,4vw,3.2rem);margin:12px 0 18px">A note from the founder</h2><p>LUMIÈRE began with a simple belief: luxury beauty should feel good, work beautifully and be made for every skin tone.</p><p>Every formula is plant-derived and never tested on animals, and every shade is built to flatter the deepest and the lightest complexions alike.</p><p style="font:italic 400 1.4rem 'Cormorant Garamond',serif;color:var(--gold)">— Founder, LUMIÈRE</p></div></div></div></section>
+
+<section id="contact"><div class="wrap"><div class="head rv"><div class="eyebrow">Visit or message us</div><h2>Get in touch</h2></div>
+<div class="cg rv"><div>
+<p><b>LUMIÈRE Beauty Studio</b><br>Eldoret, Kenya<br><a class="lnk" style="color:var(--gold)" href="https://www.google.com/maps/search/?api=1&query=Eldoret+Kenya" target="_blank" rel="noopener">Open in Google Maps</a></p>
+<p><b>Opening hours</b><br>Mon – Sat: 9:00 – 18:00<br>Sun: 11:00 – 16:00</p>
+<p><b>Contact</b><br>+254 700 000 000<br>hello@lumiere.example</p>
+<p><b>Follow</b><br>Instagram · TikTok · Facebook</p></div>
+<form id="kf"><input class="fld" id="kn" required placeholder="Your name"><textarea class="fld" id="km" required rows="5" placeholder="How can we help?"></textarea><button class="btn solid" type="submit" style="width:100%">Send via WhatsApp</button><div class="ok" id="kok"></div></form></div></div></section>
+
+<div class="strip"><div class="wrap"><span>Secure M-Pesa checkout</span><span>Free delivery over KES 5,000</span><span>14-day exchanges</span><span>Vegan &amp; cruelty-free</span></div></div>
+<footer><div class="wrap">
+<div><div class="logo">LUMIÈRE</div><p style="margin:10px 0 0">Luxury cosmetics, beautifully made.</p></div>
+<div>Shop · Philosophy · Shipping · <a href="#contact">Contact</a> · <button class="lnk" data-l="privacy">Privacy</button> · <button class="lnk" data-l="terms">Terms</button></div>
+<div>© 2026 LUMIÈRE Cosmetics. All rights reserved.</div>
+</div></footer>
+
+<a class="wa" href="https://wa.me/254700000000?text=Hello%20LUMI%C3%88RE%2C%20I%20need%20help%20choosing%20a%20product" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+<div class="modal" id="pm"><div class="box"><button class="x" aria-label="Close">×</button>
+<div class="pic" id="mpic" style="cursor:default"><b></b></div>
+<div class="pd"><small id="mcat" style="color:var(--mute);letter-spacing:.2em;text-transform:uppercase;font-size:.7rem"></small>
+<h3 id="mname" style="font-size:2.2rem;margin:6px 0"></h3><div class="price" id="mprice" style="font-size:1.5rem"></div><div id="mstock" style="font-size:.8rem;margin-top:4px"></div>
+<p id="mdesc" style="color:var(--mute)"></p>
+<div class="eyebrow"><span id="mlab"></span>: <span id="mshade" style="color:var(--text)"></span></div><div class="sw" id="msw"></div>
+<input class="fld" id="mem" type="email" placeholder="Your email" style="display:none" aria-label="Email for restock alert"><button class="btn solid" id="madd" style="width:100%">Add to bag</button>
+<p id="mhow" style="font-size:.82rem;color:var(--mute);margin-top:22px"></p>
+<div style="border-top:1px solid var(--line);margin-top:22px;padding-top:18px"><div class="eyebrow" id="mstars"></div><div id="mrev"></div>
+<form id="rf" style="margin-top:14px"><input class="fld" id="rn" required placeholder="Your name"><select class="fld" id="rs"><option value="5">★★★★★</option><option value="4">★★★★☆</option><option value="3">★★★☆☆</option></select><input class="fld" id="rt" required placeholder="Share your thoughts"><button class="btn" type="submit" style="width:100%">Submit review</button></form></div></div></div></div>
+
+<div class="modal" id="cm"><div class="box sm"><button class="x" aria-label="Close">×</button>
+<h3 style="font-size:2rem;margin-bottom:18px">Checkout</h3>
+<form id="cf"><input class="fld" required placeholder="Full name"><input class="fld" id="cph" required placeholder="M-Pesa number (07XX XXX XXX)" inputmode="tel">
+<select class="fld" id="cty"><option>Uasin Gishu</option><option>Nairobi</option><option>Mombasa</option><option>Kisumu</option><option>Nakuru</option><option>Other county</option></select>
+<input class="fld" required placeholder="Delivery address or landmark">
+<div id="csum" style="margin:6px 0 18px;color:var(--mute)"></div>
+<p style="font-size:.74rem;color:var(--mute);margin:0 0 12px;text-align:center">Secure M-Pesa payment · Free exchanges within 14 days</p><button class="btn solid" style="width:100%" type="submit">Pay with M-Pesa</button></form>
+<div class="ok" id="cok"></div></div></div>
+
+<div class="modal" id="lm"><div class="box sm"><button class="x" aria-label="Close">×</button><h3 id="lt" style="font-size:2rem;margin-bottom:14px"></h3><div id="lb"></div></div></div>
+<div class="ck" id="ck"><p style="margin:0 0 14px;font-size:.82rem">We use cookies and local storage to remember your bag and wishlist. <button class="lnk" data-l="privacy">Privacy Policy</button></p><div style="display:flex;gap:8px"><button class="btn solid" data-c="yes" style="padding:10px 20px">Accept</button><button class="btn" data-c="no" style="padding:10px 20px">Decline</button></div></div>
+
+<div class="cbar" id="cbar"><span>Compare (<b id="cbn">0</b>/3)</span><button class="btn solid" id="cbo" style="padding:8px 18px" disabled>Compare</button><button class="btn" id="cbc" style="padding:8px 18px">Clear</button></div>
+<div class="modal" id="cpm"><div class="box sm" style="max-width:900px"><button class="x" aria-label="Close">×</button><h3 style="font-size:2rem;margin-bottom:14px">Compare products</h3><div style="overflow-x:auto" id="cpt"></div></div></div>
+<div class="shade" id="shade"></div>
+<aside class="drawer" id="drawer"><h3>Your bag <button id="close" aria-label="Close">×</button></h3>
+<div id="items"></div>
+<div style="margin-bottom:14px"><div id="ptxt" style="font-size:.78rem;color:var(--mute);margin-bottom:6px"></div><div style="height:3px;background:var(--line)"><div id="prog" style="height:100%;width:0;background:var(--gold);transition:.4s"></div></div></div>
+<div style="display:flex;gap:8px;margin-bottom:6px"><input class="fld" id="code" placeholder="Discount code" style="margin:0"><button class="add" id="ap">Apply</button></div><div id="cmsg" style="font-size:.78rem;color:var(--gold);min-height:1.4em;margin-bottom:10px"></div>
+<div class="total"><span>Total</span><span id="total">KES 0</span></div>
+<button class="btn solid" id="checkout" style="width:100%">Checkout</button></aside>
+
+<script>
+var P=[
+{n:"Velvet Matte Lipstick",c:"lips",d:"Rich, weightless colour in Rosewood",p:2400,g:"linear-gradient(160deg,#3a1a22,#8a3b4b)",col:"#c04a5e",t:"Bestseller"},
+{n:"Golden Hour Serum",c:"skin",d:"Vitamin C and rosehip for luminous skin",p:4800,g:"linear-gradient(160deg,#2b1f12,#9c7040)",col:"#d4a574",t:"New"},
+{n:"Silk Skin Foundation",c:"face",d:"Medium coverage, 40 inclusive shades",p:3600,g:"linear-gradient(160deg,#261a16,#6e4a3a)",col:"#b98462",t:""},
+{n:"Noir Lash Mascara",c:"eyes",d:"Volume and length, smudge-proof",p:2200,g:"linear-gradient(160deg,#101010,#3b3b3f)",col:"#222",t:""},
+{n:"Rose Petal Cream",c:"skin",d:"Deep hydration with shea and marula",p:3900,g:"linear-gradient(160deg,#35202a,#a76878)",col:"#e8b4b8",r:1,t:"Vegan"},
+{n:"Bronze Glow Highlighter",c:"face",d:"Liquid light for cheekbones",p:2900,g:"linear-gradient(160deg,#2c2012,#b0823f)",col:"#e0b56e",r:1,t:""},
+{n:"Berry Kiss Lip Oil",c:"lips",d:"Glossy shine with nourishing oils",p:1900,g:"linear-gradient(160deg,#2a1020,#7b2c55)",col:"#a63d6e",t:"New"},
+{n:"Smoky Eye Palette",c:"eyes",d:"Twelve rich, blendable shades",p:5200,g:"linear-gradient(160deg,#17141a,#4b3a55)",col:"#6b4f7a",r:1,t:"Limited"},
+{n:"Cloud Gel Cleanser",c:"skin",d:"Gentle daily cleanse that never strips",p:2600,g:"linear-gradient(160deg,#1a2428,#4f7a86)",col:"#9cc7d1",t:""},
+{n:"Sheer Shield SPF 50",c:"skin",d:"Invisible, weightless sun protection",p:3200,g:"linear-gradient(160deg,#2b2616,#a8913f)",col:"#e8d08a",t:"New"}
+];
+var cart=[],$=function(i){return document.getElementById(i)};
+function kes(n){return"KES "+n.toLocaleString("en-KE")}
+function render(f){
+  F=f;$("grid").innerHTML=order().map(function(i){var x=P[i];
+    if(f!=="all"&&x.c!==f)return"";if(q&&(x.n+x.d).toLowerCase().indexOf(q)<0)return"";if(WO&&!W[i])return"";if(CF&&(CON[i]||[]).indexOf(CF)<0)return"";if(!inPr(x.p))return"";
+    return'<div class="card"><div class="pic" data-v="'+i+'" style="--g:'+x.g+';--c:'+x.col+'">'+(ST[i]===0?'<span class="tag">Sold out</span>':ST[i]<=4?'<span class="tag">Only '+ST[i]+' left</span>':x.t?'<span class="tag">'+x.t+'</span>':'')+'<button class="heart" data-h="'+i+'" aria-label="Wishlist">'+(W[i]?"♥":"♡")+'</button><b class="'+(x.r?"round":"")+'"></b></div><div class="info"><small>'+x.c+(REV[i].length?' · ★ '+avg(i):'')+'</small><h3>'+x.n+'</h3><p>'+x.d+'</p><div class="row"><span class="price">'+kes(x.p)+'</span><button class="add" data-v="'+i+'">Select</button></div><label class="cmp"><input type="checkbox" data-c="'+i+'"'+(CMP.indexOf(i)>-1?" checked":"")+'> Compare</label></div></div>'}).join("")}
+function draw(){
+  var tot=0;
+  $("items").innerHTML=cart.length?cart.map(function(x,i){tot+=x.p;return'<div class="it"><span>'+x.n+'</span><span>'+kes(x.p)+' <button data-r="'+i+'">REMOVE</button></span></div>'}).join(""):'<p style="color:var(--mute)">Your bag is empty.</p>';
+  $("total").textContent=kes(tot-Math.round(tot*DISC));$("count").textContent=cart.length;$("prog").style.width=Math.min(100,tot/50)+"%";$("ptxt").textContent=tot>=5000?"You’ve unlocked free delivery":"KES "+(5000-tot).toLocaleString("en-KE")+" away from free delivery"}
+function toggle(o){$("drawer").classList.toggle("open",o);$("shade").classList.toggle("on",o)}
+$("grid").addEventListener("click",function(e){var h=e.target.getAttribute("data-h");if(h!==null){if(W[h])delete W[h];else W[h]=1;saveW();render(F);return}var v=e.target.closest("[data-v]");if(v)openP(+v.getAttribute("data-v"))});
+$("items").addEventListener("click",function(e){var r=e.target.getAttribute("data-r");if(r!==null){cart.splice(r,1);draw()}});
+$("tabs").addEventListener("click",function(e){var f=e.target.getAttribute("data-f");if(!f)return;[].forEach.call($("tabs").children,function(b){b.classList.toggle("on",b===e.target)});render(f)});
+$("open").onclick=function(){toggle(true)};$("close").onclick=$("shade").onclick=function(){toggle(false)};
+
+$("nf").onsubmit=function(e){e.preventDefault();$("ok").textContent="Welcome to the inner circle. Check your inbox for 10% off.";e.target.reset()};
+var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting)x.target.classList.add("in")})},{threshold:.15});
+[].forEach.call(document.querySelectorAll(".rv"),function(el){io.observe(el)});
+var SWT={lips:[["Rosewood","#c04a5e"],["Nude","#b57a6a"],["Plum","#7b2c55"],["Coral","#e0705a"]],face:[["Fair","#f0d2b8"],["Medium","#c99572"],["Tan","#a06b48"],["Deep","#5e3a28"],["Ebony","#3a2218"]],eyes:[["Noir","#222"],["Bronze","#8a5a2b"],["Plum","#6b4f7a"]],skin:[["30ml"],["50ml"]]};
+var HOW={lips:"Apply from the centre of the lips outward and layer for intensity. Made with shea butter, jojoba and vitamin E.",skin:"Apply to clean skin morning and night, then SPF by day. Made with rosehip, marula oil and vitamin C.",face:"Blend with fingertips or a damp sponge from the centre outward. Made with squalane and botanical pigments.",eyes:"Build colour in thin layers from the lash line. Made with castor oil and mineral pigments."};
+var cur=null,sh=0;
+function openP(i,nm){cur=P[i];sh=0;var s=SWT[cur.c];if(nm)s.forEach(function(x,j){if(x[0]===nm)sh=j});
+$("mpic").style.setProperty("--g",cur.g);$("mpic").querySelector("b").className=cur.r?"round":"";
+$("mname").textContent=cur.n;$("mcat").textContent=cur.c;$("mdesc").textContent=cur.d;$("mprice").textContent=kes(cur.p);
+$("mlab").textContent=cur.c==="skin"?"Size":"Shade";$("mhow").textContent=HOW[cur.c];$("mpic").style.setProperty("--c",cur.col);
+drawSw();drawRev();seen(P.indexOf(cur));drawStock();$("pm").classList.add("on")}
+function drawSw(){var s=SWT[cur.c];$("msw").innerHTML=s.map(function(x,j){return x[1]?'<button data-s="'+j+'" style="--c:'+x[1]+'" class="'+(j===sh?"on":"")+'" title="'+x[0]+'" aria-label="'+x[0]+'"></button>':'<button data-s="'+j+'" class="chip '+(j===sh?"on":"")+'">'+x[0]+'</button>'}).join("");$("mshade").textContent=s[sh][0];if(s[sh][1])$("mpic").style.setProperty("--c",s[sh][1])}
+$("pm").addEventListener("click",function(e){var s=e.target.getAttribute("data-s");if(s!==null){sh=+s;drawSw()}});
+$("madd").onclick=function(){var i=P.indexOf(cur);if(ST[i]===0){var m=$("mem");if(m.style.display==="none"){m.style.display="block";m.focus();this.textContent="Confirm";return}if(!/^\S+@\S+\.\S+$/.test(m.value)){m.value="";m.placeholder="Enter a valid email";return}$("mstock").textContent="Thanks! We’ll email you when it’s back.";m.style.display="none";m.value="";this.textContent="Notify me when back";return}cart.push({n:cur.n+" ("+SWT[cur.c][sh][0]+")",p:cur.p});draw();$("pm").classList.remove("on");toggle(true)};
+[].forEach.call(document.querySelectorAll(".modal"),function(m){m.addEventListener("click",function(e){if(e.target===m||e.target.classList.contains("x"))m.classList.remove("on")})});
+function fee(sub){var c=$("cty").value;return sub>=5000?0:(c==="Uasin Gishu"||c==="Nairobi"?300:500)}
+function sum(){var raw=cart.reduce(function(a,x){return a+x.p},0),sub=raw-Math.round(raw*DISC),f=cart.length?fee(raw):0;$("csum").innerHTML="Subtotal "+kes(sub)+" · Delivery "+(f?kes(f):"Free")+'<br><b style="color:var(--gold);font-size:1.2rem">Total '+kes(sub+f)+"</b>";return sub+f}
+$("checkout").onclick=function(){if(!cart.length)return;toggle(false);$("cok").textContent="";sum();$("cm").classList.add("on")};
+$("cty").onchange=sum;
+$("cf").onsubmit=function(e){e.preventDefault();var ph=$("cph").value.replace(/\s/g,"");
+if(!/^(?:\+?254|0)[17]\d{8}$/.test(ph)){$("cok").textContent="Enter a valid M-Pesa number, e.g. 0712 345 678.";return}
+/* TODO: POST {phone: ph, amount: sum()} to your own backend, which calls the Daraja STK Push API */
+$("cok").textContent="Demo: an M-Pesa prompt for "+kes(sum())+" would be sent to "+ph+" now."};
+var QA=[{q:"What is your skin tone?",o:["Fair","Medium","Tan","Deep","Ebony"]},{q:"What is your undertone?",o:["Warm","Cool","Neutral"]},{q:"What do you want most?",o:["Glow","Matte finish","Hydration"]}],qs=0,qa=[],REC={"Glow":1,"Matte finish":0,"Hydration":4};
+function quiz(){var b=$("quiz");if(qs<QA.length){b.innerHTML='<div class="eyebrow">Question '+(qs+1)+' of 3</div><h3 style="font-size:2rem;margin-top:10px">'+QA[qs].q+'</h3><div class="opts">'+QA[qs].o.map(function(o){return'<button data-o="'+o+'">'+o+'</button>'}).join("")+'</div>';return}
+var r=REC[qa[2]];b.innerHTML='<div class="eyebrow">Your match</div><h3 style="font-size:2.4rem;margin:10px 0">'+qa[0]+" · "+qa[1]+'</h3><p style="color:var(--mute)">Try Silk Skin Foundation in <b style="color:var(--gold)">'+qa[0]+'</b>, paired with our '+P[r].n+'.</p><div class="opts"><button data-v="2" data-n="'+qa[0]+'">View foundation</button><button data-v="'+r+'">View '+P[r].n.split(" ")[0]+'</button><button data-rt="1">Retake</button></div>'}
+$("quiz").addEventListener("click",function(e){var t=e.target,o=t.getAttribute("data-o"),v=t.getAttribute("data-v");
+if(o!==null){qa.push(o);qs++;quiz()}else if(v!==null)openP(+v,t.getAttribute("data-n"));else if(t.getAttribute("data-rt")){qs=0;qa=[];quiz()}});
+quiz();
+var W={},DISC=0,q="",WO=false,F="all";
+try{W=JSON.parse(localStorage.getItem("lw")||"{}")}catch(e){}
+function saveW(){try{if(localStorage.getItem("ck")!=="no")localStorage.setItem("lw",JSON.stringify(W))}catch(e){}$("wc").textContent=Object.keys(W).length}
+function order(){var a=P.map(function(_,i){return i}),s=$("sort").value;if(s==="lo")a.sort(function(x,y){return P[x].p-P[y].p});if(s==="hi")a.sort(function(x,y){return P[y].p-P[x].p});return a}
+var REV={};P.forEach(function(_,i){REV[i]=[]});
+REV[0]=[{n:"Amina K.",s:5,t:"Stunning on deeper skin tones and so comfortable."},{n:"Faith M.",s:4,t:"Lasts all day. I wish there were more shades."}];
+REV[1]=[{n:"Grace W.",s:5,t:"My skin glows. Worth every shilling."}];
+REV[4]=[{n:"Linet O.",s:5,t:"Rich and soft, never greasy."}];
+function esc(s){return s.replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function avg(i){var a=REV[i];return a.length?(a.reduce(function(s,r){return s+r.s},0)/a.length).toFixed(1):""}
+function stars(n){return"★★★★★".slice(0,n)+"☆☆☆☆☆".slice(0,5-n)}
+function drawRev(){var i=P.indexOf(cur),a=REV[i];$("mstars").textContent=a.length?stars(Math.round(avg(i)))+"  "+avg(i)+" ("+a.length+" review"+(a.length>1?"s":"")+")":"No reviews yet";$("mrev").innerHTML=a.map(function(r){return'<p style="font-size:.85rem;margin:10px 0"><span style="color:var(--gold)">'+stars(r.s)+'</span> <b style="font-weight:500">'+esc(r.n)+'</b><br><span style="color:var(--mute)">'+esc(r.t)+'</span></p>'}).join("")}
+$("rf").onsubmit=function(e){e.preventDefault();REV[P.indexOf(cur)].push({n:$("rn").value,s:+$("rs").value,t:$("rt").value});this.reset();drawRev();render(F)};
+$("srch").oninput=function(){q=this.value.toLowerCase();render(F)};$("sort").onchange=function(){render(F)};
+$("wl").onclick=function(){WO=!WO;this.style.borderColor=WO?"var(--gold)":"";render(F)};
+$("th").onclick=function(){var d=document.documentElement;d.dataset.theme=d.dataset.theme==="light"?"dark":"light"};
+$("ap").onclick=function(){var c=$("code").value.trim().toUpperCase(),m={WELCOME10:.1,LUMIERE15:.15};if(m[c]){DISC=m[c];$("cmsg").textContent=c+" applied (−"+Math.round(DISC*100)+"%)"}else{DISC=0;$("cmsg").textContent="That code isn’t valid"}draw()};
+var BN=[{n:"The Glow Set",i:"Golden Hour Serum, Rose Petal Cream and Bronze Glow Highlighter",p:9900,was:11600},{n:"Night Out Edit",i:"Velvet Matte Lipstick, Noir Lash Mascara and Smoky Eye Palette",p:8500,was:9800},{n:"Everyday Essentials",i:"Silk Skin Foundation, Berry Kiss Lip Oil and Noir Lash Mascara",p:6500,was:7700}];
+$("bgrid").innerHTML=BN.map(function(b,i){return'<div class="card bun"><div class="eyebrow">Save '+kes(b.was-b.p)+'</div><h3 style="font-size:1.8rem;margin:10px 0">'+b.n+'</h3><p style="color:var(--mute);font-size:.86rem">'+b.i+'</p><div class="price" style="margin:12px 0 18px"><s style="color:var(--mute);font-size:.9rem">'+kes(b.was)+'</s> '+kes(b.p)+'</div><input class="fld" maxlength="80" id="gm'+i+'" placeholder="Gift message (optional)" aria-label="Gift message" style="margin:0 0 14px;font-size:.8rem"><button class="add" data-b="'+i+'">Add set</button></div>'}).join("");
+$("bgrid").onclick=function(e){var i=e.target.getAttribute("data-b");if(i!==null){var m=$("gm"+i).value.trim();cart.push({n:BN[i].n+" (set)"+(m?" · Gift: “"+esc(m)+"”":""),p:BN[i].p});$("gm"+i).value="";draw();toggle(true)}};
+var ST={0:12,1:3,2:20,3:0,4:7,5:2,6:15,7:4,8:30,9:9},RVD=[];
+function seen(i){RVD=RVD.filter(function(x){return x!==i});RVD.unshift(i);RVD=RVD.slice(0,4);$("recent").style.display="block";$("rvrow").innerHTML=RVD.map(function(k){return'<button data-v="'+k+'">'+P[k].n+'</button>'}).join("")}
+$("rvrow").onclick=function(e){var v=e.target.getAttribute("data-v");if(v!==null)openP(+v)};
+function drawStock(){var i=P.indexOf(cur),n=ST[i];$("mstock").textContent=n===0?"Sold out":n<=4?"Only "+n+" left in stock":"In stock";$("mstock").style.color=n<=4?"var(--rose)":"var(--gold)";$("madd").textContent=n===0?"Notify me when back":"Add to bag · "+kes(P[i].p);$("mem").style.display="none"}
+var SALE_END=new Date("2026-11-30T23:59:59+03:00");
+function tick(){var d=SALE_END-new Date();if(d<=0){$("sale").style.display="none";return}var D=Math.floor(d/864e5),H=Math.floor(d%864e5/36e5),M=Math.floor(d%36e5/6e4),S=Math.floor(d%6e4/1e3);$("cd").textContent=D+"d "+("0"+H).slice(-2)+"h "+("0"+M).slice(-2)+"m "+("0"+S).slice(-2)+"s"}
+tick();setInterval(tick,1000);
+[].forEach.call(document.querySelectorAll(".modal"),function(m){m.setAttribute("role","dialog");m.setAttribute("aria-modal","true");new MutationObserver(function(){if(m.classList.contains("on"))m.querySelector(".x").focus()}).observe(m,{attributes:true,attributeFilter:["class"]})});
+$("drawer").setAttribute("role","dialog");$("drawer").setAttribute("aria-label","Shopping bag");$("count").setAttribute("aria-live","polite");
+document.addEventListener("keydown",function(e){if(e.key==="Escape"){[].forEach.call(document.querySelectorAll(".modal.on"),function(m){m.classList.remove("on")});toggle(false)}});
+(function(){var s=document.createElement("script");s.type="application/ld+json";s.textContent=JSON.stringify({"@context":"https://schema.org","@type":"Store","name":"LUMIÈRE Cosmetics","description":"Vegan, cruelty-free luxury cosmetics for every skin tone.","address":{"@type":"PostalAddress","addressLocality":"Eldoret","addressCountry":"KE"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Signature essentials","itemListElement":P.map(function(x,i){return{"@type":"Offer","priceCurrency":"KES","price":x.p,"availability":ST[i]===0?"https://schema.org/OutOfStock":"https://schema.org/InStock","itemOffered":{"@type":"Product","name":x.n,"description":x.d}}})}});document.head.appendChild(s)})();
+try{if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(function(){})}catch(e){}
+var AM=["Free delivery over KES 5,000","Use code WELCOME10 for 10% off your first order","Vegan · Cruelty-free · Made for every skin tone"],ai=0;
+setInterval(function(){ai=(ai+1)%AM.length;$("annt").textContent=AM[ai]},4000);$("annx").onclick=function(){$("ann").style.display="none"};
+var ROUT={Oily:{am:[8,1,9],pm:[8,1]},Dry:{am:[8,4,9],pm:[8,1,4]},Combination:{am:[8,1,9],pm:[8,4]},Sensitive:{am:[8,4,9],pm:[8,4]}},STEP={8:"Cleanse",1:"Treat",4:"Moisturise",9:"Protect"},RT="Oily";
+function uniq(r){return r.am.concat(r.pm).filter(function(x,k,a){return a.indexOf(x)===k})}
+function rcol(t,a){return'<div class="rcol"><h3 style="font-size:1.7rem;margin-bottom:8px">'+t+'</h3>'+a.map(function(i){return'<div class="rs"><span><small>'+STEP[i]+'</small>'+P[i].n+'</span><button class="add" data-v="'+i+'">'+kes(P[i].p)+'</button></div>'}).join("")+'</div>'}
+function drawR(){var r=ROUT[RT],tot=uniq(r).reduce(function(s,i){return s+P[i].p},0);[].forEach.call($("rtabs").children,function(b){b.classList.toggle("on",b.getAttribute("data-t")===RT)});
+$("rout").innerHTML='<div class="rcols">'+rcol("Morning",r.am)+rcol("Evening",r.pm)+'</div><div style="text-align:center;margin-top:28px"><button class="btn solid" data-all="1">Add full routine · '+kes(tot)+'</button></div>'}
+$("rtabs").onclick=function(e){var t=e.target.getAttribute("data-t");if(t){RT=t;drawR()}};
+$("rout").onclick=function(e){var v=e.target.getAttribute("data-v");if(v!==null)openP(+v);else if(e.target.getAttribute("data-all")){uniq(ROUT[RT]).forEach(function(i){cart.push({n:P[i].n,p:P[i].p})});draw();toggle(true)}};
+drawR();
+$("br").oninput=function(){var v=this.value;$("bb").style.clipPath="inset(0 "+(100-v)+"% 0 0)";$("bh").style.left=v+"%"};
+$("kf").onsubmit=function(e){e.preventDefault();var t="Hello LUMIÈRE, I’m "+$("kn").value+". "+$("km").value;window.open("https://wa.me/254700000000?text="+encodeURIComponent(t),"_blank","noopener");$("kok").textContent="Opening WhatsApp…";this.reset()};
+var LG={privacy:["Privacy Policy",["We collect only what we need to process your order and answer your messages: your name, phone number, email and delivery address.","We process personal data in line with the Kenya Data Protection Act, 2019. We never sell your data and share it only with delivery and payment partners who need it to complete your order.","You can ask us to access, correct or delete your data at any time by contacting us.","We use cookies and local storage to remember your bag, wishlist and preferences. You can decline them in the cookie banner."]],terms:["Terms of Sale",["All prices are in Kenyan shillings (KES). Orders are confirmed once payment is received.","Delivery times are estimates. Delivery is free on orders over KES 5,000.","Unopened or lightly swatched items can be exchanged within 14 days of delivery. Opened skincare cannot be returned for hygiene reasons unless faulty.","Product descriptions and shade images are a guide, and screens can display colours differently. Please patch-test new products before use."]]};
+document.addEventListener("click",function(e){var l=e.target.getAttribute&&e.target.getAttribute("data-l");if(l){$("lt").textContent=LG[l][0];$("lb").innerHTML=LG[l][1].map(function(t){return'<p style="color:var(--mute);font-size:.9rem">'+t+'</p>'}).join("");$("lm").classList.add("on")}});
+try{if(!localStorage.getItem("ck"))$("ck").classList.add("on")}catch(e){$("ck").classList.add("on")}
+$("ck").addEventListener("click",function(e){var c=e.target.getAttribute("data-c");if(c){try{localStorage.setItem("ck",c)}catch(x){}this.classList.remove("on")}});
+var CMP=[],CF="",PR="",CON={1:["Glow"],4:["Hydration","Sensitive skin"],5:["Glow"],6:["Hydration"],8:["Sensitive skin"],9:["Sun protection"]};
+function inPr(p){return PR===""||(PR==="lo"?p<3000:PR==="mid"?p>=3000&&p<=5000:p>5000)}
+function R(){render(F);if(!$("grid").children.length)$("grid").innerHTML='<p style="grid-column:1/-1;text-align:center;color:var(--mute)">No products match. Try clearing a filter.</p>'}
+$("con").onchange=function(){CF=this.value;R()};$("prc").onchange=function(){PR=this.value;R()};
+$("srch").oninput=function(){q=this.value.toLowerCase();R()};$("sort").onchange=function(){R()};
+$("wl").onclick=function(){WO=!WO;this.style.borderColor=WO?"var(--gold)":"";R()};
+function cmpBar(){$("cbar").classList.toggle("on",CMP.length>0);$("cbn").textContent=CMP.length;$("cbo").disabled=CMP.length<2}
+function cmpTable(){var rows=[["Price",function(i){return kes(P[i].p)}],["Category",function(i){return P[i].c}],["Rating",function(i){return REV[i].length?"★ "+avg(i)+" ("+REV[i].length+")":"No reviews yet"}],["Availability",function(i){return ST[i]===0?"Sold out":ST[i]<=4?"Only "+ST[i]+" left":"In stock"}],["Best for",function(i){return(CON[i]||["Everyday colour"]).join(", ")}],["About",function(i){return P[i].d}]];
+$("cpt").innerHTML='<table class="cmpt"><tr><th></th>'+CMP.map(function(i){return'<th>'+P[i].n+'</th>'}).join("")+'</tr>'+rows.map(function(r){return'<tr><td>'+r[0]+'</td>'+CMP.map(function(i){return'<td>'+r[1](i)+'</td>'}).join("")+'</tr>'}).join("")+'<tr><td></td>'+CMP.map(function(i){return'<td><button class="add" data-v="'+i+'">View</button></td>'}).join("")+'</tr></table>'}
+$("grid").addEventListener("change",function(e){var c=e.target.getAttribute("data-c");if(c===null)return;c=+c;if(e.target.checked){if(CMP.length>=3){e.target.checked=false;return}CMP.push(c)}else CMP=CMP.filter(function(x){return x!==c});cmpBar()});
+$("cbo").onclick=function(){cmpTable();$("cpm").classList.add("on")};
+$("cbc").onclick=function(){CMP=[];cmpBar();R()};
+$("cpt").onclick=function(e){var v=e.target.getAttribute("data-v");if(v!==null){$("cpm").classList.remove("on");openP(+v)}};
+saveW();render("all");draw();
+</script>
+</body>
+</html>
